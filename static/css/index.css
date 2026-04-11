@@ -4,6 +4,15 @@ body {
   color: #1d1d1f;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
+
 .navbar {
   border-bottom: 1px solid #e7e7e7;
 }
@@ -47,21 +56,56 @@ body {
   background: #ffffff;
 }
 
+.media-section .container {
+  max-width: 1200px;
+}
+
+.youtube-embed-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto 1.5rem;
+  padding-top: 56.25%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.youtube-embed-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .video-grid video {
   width: 100%;
   display: block;
   border-radius: 10px;
   border: 1px solid #d9d9d9;
   background: #000;
+  aspect-ratio: 16 / 9;
+  min-height: 320px;
+  object-fit: cover;
 }
 
 .media-card {
   background: #ffffff;
   border: 1px solid #e4e4e4;
   border-radius: 12px;
-  padding: 1rem;
+  padding: 1.35rem;
   height: 100%;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.video-grid .column {
+  display: flex;
+}
+
+.video-grid .media-card {
+  width: 100%;
 }
 
 .long-form-copy {
@@ -116,7 +160,14 @@ body {
   margin-bottom: 1.25rem;
 }
 
-.platform-grid .column img,
+.platform-group {
+  margin-top: 1.5rem;
+}
+
+.platform-subheading {
+  margin-bottom: 0.75rem;
+}
+
 .result-figures .figure-card img {
   width: 100%;
   border-radius: 10px;
@@ -125,14 +176,36 @@ body {
   display: block;
 }
 
+.platform-grid .column img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
 .platform-grid .column {
   display: flex;
+}
+
+.platform-item {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  padding: 0.5rem;
 }
 
 .platform-grid .column img {
   object-fit: contain;
   padding: 0.35rem;
   background: #fff;
+}
+
+.platform-item p {
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+  text-align: center;
+  color: #575757;
+  font-size: 0.95rem;
 }
 
 .figure-card {
@@ -177,5 +250,9 @@ body {
   .figure-card,
   .method-cards .box {
     padding: 0.85rem;
+  }
+
+  .video-grid video {
+    min-height: 220px;
   }
 }

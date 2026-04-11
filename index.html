@@ -19,8 +19,15 @@
 		/>
 		<link rel="stylesheet" href="./static/css/bulma.min.css" />
 		<link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+		/>
 		<link rel="stylesheet" href="./static/css/index.css" />
-		<link rel="icon" href="./static/images/favicon.svg" />
+		<link
+			rel="icon"
+			href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%9B%B4%3C/text%3E%3C/svg%3E"
+		/>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -63,16 +70,30 @@
 							<h1 class="title is-1 publication-title">
 								GM3: A General Physical Model for Micro-Mobility Vehicles
 							</h1>
-							<p class="is-size-5 publication-subtitle">
+							<!-- <p class="is-size-5 publication-subtitle">
 								A unified tire-level dynamics model for arbitrary wheel layouts,
 								rider lean, and realistic micro-mobility simulation.
-							</p>
+							</p> -->
 
 							<div class="is-size-5 publication-authors">
-								<span class="author-block">Grace Cai<sup>*1</sup>,</span>
-								<span class="author-block">Nithin Parepally<sup>*1</sup>,</span>
-								<span class="author-block">Laura Zheng<sup>1</sup>,</span>
-								<span class="author-block">Ming C. Lin<sup>1</sup></span>
+								<span class="author-block"
+									><a href="https://gracelcai.github.io/">Grace Cai</a
+									><sup>*1</sup>,</span
+								>
+								<span class="author-block"
+									><a
+										href="https://www.linkedin.com/in/nithin-parepally-48b40a242/"
+										>Nithin Parepally</a
+									><sup>*1</sup>,</span
+								>
+								<span class="author-block"
+									><a href="https://laurayuzheng.github.io/">Laura Zheng</a
+									><sup>1</sup>,</span
+								>
+								<span class="author-block"
+									><a href="https://www.cs.umd.edu/~lin/">Ming C. Lin</a
+									><sup>1</sup></span
+								>
 							</div>
 							<div class="is-size-6 publication-authors">
 								<span class="author-block"
@@ -86,31 +107,45 @@
 							<div class="publication-links">
 								<span class="link-block">
 									<a
-										href="#"
-										class="button is-normal is-rounded is-dark is-disabled"
-										aria-disabled="true"
+										href="./GM3_Final.pdf"
+										class="button is-normal is-rounded is-dark"
 									>
 										<span class="icon"><i class="fas fa-file-pdf"></i></span>
-										<span>Paper (TBD)</span>
+										<span>Paper</span>
 									</a>
 								</span>
 								<span class="link-block">
 									<a
+										href="https://arxiv.org/abs/2510.07807"
+										class="external-link button is-normal is-rounded is-dark"
+									>
+										<span class="icon">
+											<i class="ai ai-arxiv"></i>
+										</span>
+										<span>arXiv</span>
+									</a>
+								</span>
+
+								<span class="link-block">
+									<a
 										href="#"
-										class="button is-normal is-rounded is-dark is-disabled"
+										class="button is-normal is-rounded is-dark"
 										aria-disabled="true"
 									>
-										<span class="icon"><i class="fas fa-code"></i></span>
+										<span class="icon"><i class="fab fa-github"></i></span>
 										<span>Code (TBD)</span>
 									</a>
 								</span>
 								<span class="link-block">
-									<a href="#media" class="button is-normal is-rounded is-dark">
-										<span class="icon"><i class="fas fa-video"></i></span>
-										<span>Videos</span>
+									<a
+										href="https://youtu.be/GV_J_Sh1Oxw"
+										class="button is-normal is-rounded is-dark"
+									>
+										<span class="icon"><i class="fab fa-youtube"></i></span>
+										<span>Video</span>
 									</a>
 								</span>
-								<span class="link-block">
+								<!-- <span class="link-block">
 									<a
 										href="#"
 										class="button is-normal is-rounded is-dark is-disabled"
@@ -119,7 +154,7 @@
 										<span class="icon"><i class="far fa-images"></i></span>
 										<span>Dataset (TBD)</span>
 									</a>
-								</span>
+								</span> -->
 							</div>
 						</div>
 					</div>
@@ -129,37 +164,28 @@
 
 		<section id="media" class="section media-section">
 			<div class="container is-max-desktop">
-				<h2 class="title is-3 has-text-centered">Project Videos</h2>
 				<div class="columns is-multiline video-grid">
-					<div class="column is-half">
+					<div class="column">
 						<div class="media-card">
-							<h3 class="title is-5">GM3 Demo</h3>
+							<h3 class="title is-5">Bicycle/Scooter</h3>
 							<video controls muted playsinline preload="metadata">
-								<source src="./static/videos/GM3_demo.mp4" type="video/mp4" />
+								<source src="./static/videos/2w_ftb.mov" type="video/mp4" />
 							</video>
 						</div>
 					</div>
-					<div class="column is-half">
+					<div class="column">
 						<div class="media-card">
-							<h3 class="title is-5">Common Platforms</h3>
+							<h3 class="title is-5">Skateboard</h3>
 							<video controls muted playsinline preload="metadata">
-								<source src="./static/videos/Common.mp4" type="video/mp4" />
+								<source src="./static/videos/4w_s.mov" type="video/mp4" />
 							</video>
 						</div>
 					</div>
-					<div class="column is-half">
+					<div class="column">
 						<div class="media-card">
-							<h3 class="title is-5">Uncommon Platforms</h3>
+							<h3 class="title is-5">Cart</h3>
 							<video controls muted playsinline preload="metadata">
-								<source src="./static/videos/Uncommon_1.mp4" type="video/mp4" />
-							</video>
-						</div>
-					</div>
-					<div class="column is-half">
-						<div class="media-card">
-							<h3 class="title is-5">Novel Platforms</h3>
-							<video controls muted playsinline preload="metadata">
-								<source src="./static/videos/Novel_1.mp4" type="video/mp4" />
+								<source src="./static/videos/4w.mov" type="video/mp4" />
 							</video>
 						</div>
 					</div>
@@ -172,78 +198,63 @@
 				<div class="content long-form-copy">
 					<h2 class="title is-3">Abstract</h2>
 					<p>
-						Modeling micro-mobility vehicles (MMVs) is increasingly important
-						for autonomous driving validation and urban traffic simulation, yet
-						most practical tools still rely on variants of the Kinematic Bicycle
-						Model (KBM) or mode-specific approximations. These approaches are
-						efficient, but they underrepresent tire slip, load transfer,
-						rider/vehicle lean, and non-standard wheel layouts. GM3 addresses
-						this gap with a unified, tire-level physical formulation grounded in
-						the brush tire model.
-					</p>
-					<p>
-						GM3 supports arbitrary wheel configurations, including single-track,
-						double-track, and multi-wheel platforms. The model captures
-						nonlinear tire behavior while staying computationally practical for
-						interactive simulation. We also provide a model-agnostic evaluation
-						framework that separates platform geometry from dynamics, enabling
-						side-by-side comparison across models under consistent controls and
-						integration settings.
-					</p>
-					<p>
-						Across Stanford Drone Dataset trajectories and aggressive maneuver
-						tests, GM3 improves step-by-step trajectory fidelity (ADE) relative
-						to KBM while maintaining comparable global path similarity (DFD).
-						These results indicate that tire-level dynamics provide meaningful
-						gains for realistic MMV modeling, especially in higher-curvature or
-						dynamically demanding scenarios.
+						Modeling the dynamics of micro-mobility vehicles (MMV) is becoming
+						increasingly important for training autonomous vehicle systems and
+						building urban traffic simulations. However, mainstream tools rely
+						on variants of the Kinematic Bicycle Model (KBM) or mode-specific
+						physics that miss tire slip, load transfer, and rider/vehicle lean.
+						To our knowledge, no unified, physics-based model captures these
+						dynamics across the full range of common MMVs and wheel layouts. We
+						propose the "Generalized Micro-mobility Model" (GM3), a tire-level
+						formulation based on the tire brush representation that supports
+						arbitrary wheel configurations, including single/double track and
+						multi-wheel platforms. We introduce an interactive model-agnostic
+						evaluation and visualization framework that decouples vehicle/layout
+						specification from dynamics to compare the GM3 with the KBM and
+						other models, consisting of fixed step RK4 integration,
+						human-in-the-loop and scripted control, real-time trajectory traces,
+						and logging for analysis. We also empirically validate the GM3 on
+						the Stanford Drone Dataset's deathCircle (roundabout) scene for
+						biker, skater, and cart classes.
 					</p>
 				</div>
-			</div>
-		</section>
-
-		<section class="section is-light">
-			<div class="container is-max-desktop">
-				<div class="content long-form-copy">
-					<h2 class="title is-3">Introduction</h2>
-					<p>
-						Micro-mobility use continues to grow in urban spaces, and so does
-						the need to model interactions between MMVs and autonomous systems.
-						Existing motion models are often vehicle-centric and tuned for
-						low-speed, low-curvature conditions. This leads to unrealistic
-						behavior when MMVs execute hard turns, evasive maneuvers, or rapid
-						changes in acceleration.
-					</p>
-					<p>
-						KBM remains a common default due to simplicity, but it assumes
-						geometric rolling constraints that omit key effects present in real
-						MMVs. GM3 is designed to preserve practical simulation speed while
-						introducing physically grounded mechanics: tire-force saturation,
-						slip coupling, longitudinal/lateral load transfer, and lean-induced
-						moments.
-					</p>
-					<p>
-						The objective is a single general model that can represent bicycles,
-						scooters, skateboards, carts, and novel wheel layouts using a
-						unified formulation rather than separate per-vehicle dynamics
-						pipelines.
-					</p>
+				<h3 class="title is-4">Demo Video</h3>
+				<div class="youtube-embed-wrap">
+					<iframe
+						src="https://www.youtube.com/embed/GV_J_Sh1Oxw"
+						title="GM3 project video"
+						allow="
+							accelerometer;
+							autoplay;
+							clipboard-write;
+							encrypted-media;
+							gyroscope;
+							picture-in-picture;
+							web-share;
+						"
+						referrerpolicy="strict-origin-when-cross-origin"
+						allowfullscreen
+					></iframe>
 				</div>
 			</div>
 		</section>
 
 		<section id="method" class="section">
 			<div class="container is-max-desktop">
-				<h2 class="title is-3 has-text-centered">Methodology Overview</h2>
+				<h2 class="title is-3 has-text-centered">Methodology</h2>
 				<div class="figure-block">
 					<img
 						src="./static/images/gm3_update_small.png"
 						alt="GM3 update pipeline"
 					/>
 					<p class="caption">
-						GM3 update loop: load transfer and lean conversion, control
-						assignment per tire, tire-force computation, and integration into
-						vehicle state.
+						The GM3 State gets updated with the following steps: (1)
+						<strong>load transfer</strong> and
+						<strong>leaning angle to steer</strong> conversion for platforms,
+						(2) <strong>control assignment</strong> for each tire, (3)
+						<strong>individual tire processing</strong> with the brush model,
+						and (4) <strong>force integration</strong> and rider lean force
+						application.
 					</p>
 				</div>
 
@@ -257,6 +268,12 @@
 								to the body frame. Total forces and yaw moment are aggregated
 								across all tires, including self-aligning moments.
 							</p>
+							<div class="inline-figure">
+								<img
+									src="./static/images/integration.png"
+									alt="Vehicle integration visualization"
+								/>
+							</div>
 						</article>
 					</div>
 					<div class="column is-half">
@@ -296,6 +313,12 @@
 								This reproduces turn behavior not captured by standard steering
 								assumptions.
 							</p>
+							<div class="inline-figure">
+								<img
+									src="./static/images/skateboard.png"
+									alt="Skateboard truck geometry visualization"
+								/>
+							</div>
 						</article>
 					</div>
 				</div>
@@ -311,51 +334,91 @@
 					GM3 supports common, uncommon, and novel wheel configurations under a
 					single dynamics interface.
 				</p>
-				<div class="columns is-multiline platform-grid">
-					<div class="column is-one-third">
-						<img
-							src="./static/images/2w_ftb.png"
-							alt="Two-wheel front-to-back layout"
-						/>
+
+				<div class="platform-group">
+					<h3 class="title is-4 platform-subheading">Common</h3>
+					<div class="columns is-multiline platform-grid">
+						<div class="column is-one-third">
+							<div class="platform-item">
+								<img
+									src="./static/images/2w_ftb.png"
+									alt="Bicycle two-wheel layout"
+								/>
+								<p>Bicycle / Scooter</p>
+							</div>
+						</div>
+						<div class="column is-one-third">
+							<div class="platform-item">
+								<img src="./static/images/4w_s.png" alt="Skateboard layout" />
+								<p>Skateboard</p>
+							</div>
+						</div>
+						<div class="column is-one-third">
+							<div class="platform-item">
+								<img src="./static/images/4w.png" alt="Cart or LSV layout" />
+								<p>Cart / LSV</p>
+							</div>
+						</div>
 					</div>
-					<div class="column is-one-third">
-						<img src="./static/images/4w_s.png" alt="Skateboard layout" />
+				</div>
+
+				<div class="platform-group">
+					<h3 class="title is-4 platform-subheading">Uncommon</h3>
+					<div class="columns is-multiline platform-grid">
+						<div class="column is-one-quarter-desktop is-half-tablet">
+							<div class="platform-item">
+								<img src="./static/images/1w.png" alt="Unicycle layout" />
+								<p>Unicycle</p>
+							</div>
+						</div>
+						<div class="column is-one-quarter-desktop is-half-tablet">
+							<div class="platform-item">
+								<img src="./static/images/2w_sts.png" alt="Hoverboard layout" />
+								<p>Hoverboard</p>
+							</div>
+						</div>
+						<div class="column is-one-quarter-desktop is-half-tablet">
+							<div class="platform-item">
+								<img
+									src="./static/images/1f2r.png"
+									alt="Delta three-wheel layout"
+								/>
+								<p>Delta Tricycle</p>
+							</div>
+						</div>
+						<div class="column is-one-quarter-desktop is-half-tablet">
+							<div class="platform-item">
+								<img
+									src="./static/images/2f1r.png"
+									alt="Tadpole three-wheel layout"
+								/>
+								<p>Tadpole Tricycle</p>
+							</div>
+						</div>
 					</div>
-					<div class="column is-one-third">
-						<img src="./static/images/4w.png" alt="Four-wheel cart layout" />
-					</div>
-					<div class="column is-one-third">
-						<img src="./static/images/1w.png" alt="Single-wheel layout" />
-					</div>
-					<div class="column is-one-third">
-						<img
-							src="./static/images/2w_sts.png"
-							alt="Two-wheel side-by-side layout"
-						/>
-					</div>
-					<div class="column is-one-third">
-						<img
-							src="./static/images/1f2r.png"
-							alt="Delta three-wheel layout"
-						/>
-					</div>
-					<div class="column is-one-third">
-						<img
-							src="./static/images/2f1r.png"
-							alt="Tadpole three-wheel layout"
-						/>
-					</div>
-					<div class="column is-one-third">
-						<img
-							src="./static/images/5w.png"
-							alt="Five-wheel circular layout"
-						/>
-					</div>
-					<div class="column is-one-third">
-						<img
-							src="./static/images/carriage.png"
-							alt="Drawn carriage layout"
-						/>
+				</div>
+
+				<div class="platform-group">
+					<h3 class="title is-4 platform-subheading">Novel</h3>
+					<div class="columns is-multiline is-centered platform-grid">
+						<div class="column is-one-third-desktop is-half-tablet">
+							<div class="platform-item">
+								<img
+									src="./static/images/5w.png"
+									alt="Circular platform five-wheel layout"
+								/>
+								<p>Circular Platform (5w)</p>
+							</div>
+						</div>
+						<div class="column is-one-third-desktop is-half-tablet">
+							<div class="platform-item">
+								<img
+									src="./static/images/carriage.png"
+									alt="Drawn carriage layout"
+								/>
+								<p>Drawn Carriage</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -385,50 +448,6 @@
 						constraints. Supported control modes include direct steering,
 						lean-to-steer mappings, and differential-drive behavior.
 					</p>
-				</div>
-			</div>
-		</section>
-
-		<section class="section">
-			<div class="container is-max-desktop">
-				<h2 class="title is-3 has-text-centered">Additional Visuals</h2>
-				<div class="columns is-multiline result-figures">
-					<div class="column is-full">
-						<div class="figure-card wide">
-							<img
-								src="./static/images/gm3_update.png"
-								alt="Detailed GM3 update flow diagram"
-							/>
-							<p>
-								Detailed GM3 update flow with control assignment, per-tire
-								processing, and force integration.
-							</p>
-						</div>
-					</div>
-					<div class="column is-half">
-						<div class="figure-card">
-							<img
-								src="./static/images/lean2.png"
-								alt="Leaning platform rendering"
-							/>
-							<p>
-								Leaning behavior visualization on a two-wheel front-to-back
-								platform.
-							</p>
-						</div>
-					</div>
-					<div class="column is-half">
-						<div class="figure-card">
-							<img
-								src="./static/images/script3.png"
-								alt="Scripted trajectory evaluation plot"
-							/>
-							<p>
-								Scripted evaluation trace comparing model behaviors against
-								ground-truth trajectories.
-							</p>
-						</div>
-					</div>
 				</div>
 			</div>
 		</section>
@@ -536,16 +555,30 @@
 			</div>
 		</section>
 
+		<section class="section" id="bibtex">
+			<div class="container is-max-desktop content">
+				<h2 class="title is-4">BibTeX</h2>
+				<pre><code>@article{cai2026gm3,
+      title={GM3: A General Physical Model for Micro-Mobility Vehicles},
+      author={Grace Cai and Nithin Parepally and Laura Zheng and Ming C. Lin},
+      year={2026},
+      journal={ICRA},
+}</code></pre>
+			</div>
+		</section>
+
 		<footer class="footer">
 			<div class="container">
 				<div class="content has-text-centered">
 					<p>
-						<strong>GM3</strong> project website. Built from project media and
-						paper content.
-					</p>
-					<p class="smallprint">
-						Please replace placeholder links with publication resources when
-						available.
+						This page was built from the
+						<a href="https://nerfies.github.io/">Nerfies</a> project page.
+						<br />
+						This website is licensed under a
+						<a href="http://creativecommons.org/licenses/by-sa/4.0/"
+							>Creative Commons Attribution-ShareAlike 4.0 International
+							License</a
+						>.
 					</p>
 				</div>
 			</div>
