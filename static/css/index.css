@@ -13,6 +13,11 @@ h6 {
   text-align: center;
 }
 
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .navbar {
   border-bottom: 1px solid #e7e7e7;
 }
@@ -115,6 +120,21 @@ h6 {
 
 .long-form-copy p {
   line-height: 1.8;
+}
+
+.method-text-block {
+  max-width: 860px;
+  margin: 0 auto 1rem;
+}
+
+.integration-steps {
+  margin: 0 0 1rem 0;
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+.integration-steps li {
+  margin-bottom: 0.25rem;
 }
 
 .figure-block {

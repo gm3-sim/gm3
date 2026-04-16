@@ -34,7 +34,7 @@
 		<script src="./static/js/index.js"></script>
 	</head>
 	<body>
-		<nav class="navbar is-white" role="navigation" aria-label="main navigation">
+		<!-- <nav class="navbar is-white" role="navigation" aria-label="main navigation">
 			<div class="navbar-brand">
 				<a class="navbar-item" href="#top">
 					<strong>GM3</strong>
@@ -60,7 +60,7 @@
 					<a class="navbar-item" href="#conclusion">Conclusion</a>
 				</div>
 			</div>
-		</nav>
+		</nav> -->
 
 		<section id="top" class="hero gm3-hero">
 			<div class="hero-body">
@@ -241,32 +241,22 @@
 		<section id="method" class="section">
 			<div class="container is-max-desktop">
 				<h2 class="title is-3 has-text-centered">Methodology</h2>
-				<div class="figure-block">
-					<img
-						src="./static/images/gm3_update_small.png"
-						alt="GM3 update pipeline"
-					/>
-					<p class="caption">
-						The GM3 State gets updated with the following steps: (1)
-						<strong>load transfer</strong> and
-						<strong>leaning angle to steer</strong> conversion for platforms,
-						(2) <strong>control assignment</strong> for each tire, (3)
-						<strong>individual tire processing</strong> with the brush model,
-						and (4) <strong>force integration</strong> and rider lean force
-						application.
-					</p>
-				</div>
 
 				<div class="columns is-multiline method-cards">
 					<div class="column is-half">
 						<article class="box">
 							<h3 class="title is-5">Vehicle Integration</h3>
+							<p></p>
 							<p>
-								Each tire receives transformed body velocities in its local
-								frame, computes brush-model forces, and maps these forces back
-								to the body frame. Total forces and yaw moment are aggregated
-								across all tires, including self-aligning moments.
+								We apply the tire brush model to an MMV with any number of
+								tires, given their positions relative to the center of gravity:
 							</p>
+							<ol class="integration-steps">
+								<li>Transform velocity from body frame into tire frame</li>
+								<li>Compute tire brush model forces and moments</li>
+								<li>Transform forces and moments back into body frame</li>
+								<li>Add up forces and moments to calculate acceleration</li>
+							</ol>
 							<div class="inline-figure">
 								<img
 									src="./static/images/integration.png"
@@ -284,16 +274,22 @@
 								width. This ensures each tire-force computation uses realistic
 								per-wheel normal forces.
 							</p>
+							<div class="inline-figure">
+								<img
+									src="./static/images/load_transfer.png"
+									alt="Load transfer visualization"
+								/>
+							</div>
 						</article>
 					</div>
 					<div class="column is-half">
 						<article class="box">
 							<h3 class="title is-5">Rider Lean Dynamics</h3>
 							<p>
-								For lean-capable platforms, rider center-of-gravity shifts
-								generate roll moments coupled with centripetal effects. These
-								terms are integrated into the global vehicle force/moment
-								update.
+								For lean-capable MMVs, we calculate the rider’s lean angle from
+								the velocity and turn radius. This angle is used to project the
+								rider’s gravitational force into the lateral axis and calculate
+								the roll moment.
 							</p>
 							<div class="inline-figure">
 								<img
@@ -307,10 +303,10 @@
 						<article class="box">
 							<h3 class="title is-5">Skateboard Truck Geometry</h3>
 							<p>
-								GM3 supports lean-to-steer skateboards through opposite
-								front/rear truck steering angles induced by kingpin geometry.
-								This reproduces turn behavior not captured by standard steering
-								assumptions.
+								Skateboards have two independent steering assemblies called
+								“truck” that rotate in opposite directions about a kingpin bolt
+								when the rider leans to turn. We calculate these angles from the
+								lean angle.
 							</p>
 							<div class="inline-figure">
 								<img
@@ -321,6 +317,21 @@
 						</article>
 					</div>
 				</div>
+				<div class="figure-block">
+					<img
+						src="./static/images/gm3_update_small.png"
+						alt="GM3 update pipeline"
+					/>
+					<p class="caption">
+						The GM3 State gets updated with the following steps: (1)
+						<strong>load transfer</strong> and
+						<strong>leaning angle to steer</strong> conversion for platforms,
+						(2) <strong>control assignment</strong> for each tire, (3)
+						<strong>individual tire processing</strong> with the brush model,
+						and (4) <strong>force integration</strong> and rider lean force
+						application.
+					</p>
+				</div>
 			</div>
 		</section>
 
@@ -330,8 +341,12 @@
 					Generalization Across Platform Layouts
 				</h2>
 				<p class="has-text-centered section-intro">
-					GM3 supports common, uncommon, and novel wheel configurations under a
-					single dynamics interface.
+					Currently, our model supports three control interfaces: explicit
+					manual control, lean-to-steer with truck geometry, and differential
+					drive. Since GM3 is modular, the control module can be extended to
+					other control interfaces. This allows GM3 to support any wheeled MMV
+					or robot, given individual wheel steering angles and angular velocity
+					from the control module.
 				</p>
 
 				<div class="platform-group">
@@ -456,23 +471,21 @@
 				<h2 class="title is-3 has-text-centered">Experiments and Results</h2>
 				<div class="content long-form-copy">
 					<p>
-						Evaluation uses trajectories from the Stanford Drone Dataset
-						deathCircle scene and additional high-curvature maneuver traces. We
-						compare GM3 and KBM with Average Displacement Error (ADE) and
-						Discrete Frechet Distance (DFD).
+						We evaluate GM3 against the Kinematic Bicycle Model (KBM). For
+						real-world evaluation, we use trajectories from the Stanford Drone
+						Dataset (SDD) deathCircle (roundabout) scene for three MMV modes
+						(Biker, Skater, and Cart). To stress test GM3, we generate
+						aggressive maneuvers, including S-curves and U-turns. We measure
+						performance with Average Displacement Error (ADE) and Discrete
+						Fréchet Distance (DFD).
 					</p>
 					<p>
-						GM3 consistently improves ADE across biker, skater, and cart
-						classes, indicating stronger local trajectory fidelity. DFD outcomes
-						are comparable overall, with mode-specific gains for skater and cart
-						trajectories and minor tradeoffs for biker tracks where lean-induced
-						lateral offsets are more pronounced.
-					</p>
-					<p>
-						On aggressive maneuvers including S-curves, U-turns, and
-						turn-intensive patterns, GM3 better reproduces high-curvature
-						trajectory structure by modeling slip and load transfer directly at
-						the tire level.
+						Across the SDD trajectories, GM3 reduces ADE relative to KBM for all
+						three modes. For DFD, GM3 improves over KBM on Skater and Cart, but
+						performs worse on Biker due to lean-induced lateral biases. On the
+						aggressive maneuver experiments, GM3 closely follows the ground
+						truth while KBM tends to over/under steer in high-curvature
+						segments.
 					</p>
 				</div>
 
@@ -554,7 +567,7 @@
 			</div>
 		</section>
 
-		<section class="section" id="bibtex">
+		<!-- <section class="section" id="bibtex">
 			<div class="container is-max-desktop content">
 				<h2 class="title is-4">BibTeX</h2>
 				<pre><code>@article{cai2026gm3,
@@ -564,7 +577,7 @@
       journal={ICRA},
 }</code></pre>
 			</div>
-		</section>
+		</section> -->
 
 		<footer class="footer">
 			<div class="container">
